@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ClearPHX | Window Cleaning &amp; Hard Water Removal in Paradise Valley, AZ (85253)</title>
-<meta name="description" content="Paradise Valley's detail-obsessed window cleaning service. Interior/exterior windows, hard water stain removal, pressure washing & solar panel cleaning. Licensed & insured. Free quotes — usually within the hour.">
+<meta name="description" content="Paradise Valley's detail-obsessed window cleaning service. Interior/exterior windows, hard water stain removal, pressure washing & solar panel cleaning. Free quotes — usually within the hour.">
 <!-- TODO before launch: replace PLACEHOLDER phone, email, and street address throughout. Wire quote form to a backend (Formspree/Netlify Forms/Jobber). -->
 <script type="application/ld+json">
 {
@@ -69,6 +69,10 @@
 
   /* Hero */
   .hero{background:linear-gradient(160deg,var(--navy) 0%,var(--navy-deep) 60%,#123c50 100%);color:#fff;padding:90px 0 70px;position:relative;overflow:hidden}
+  .hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+  .hero-video-overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(160deg,rgba(14,42,58,.88) 0%,rgba(8,28,40,.82) 60%,rgba(18,60,80,.78) 100%)}
+  @media (prefers-reduced-motion: reduce){.hero-video{display:none}}
+  @media (max-width:640px){.hero-video{display:none}}
   .hero::after{content:"";position:absolute;right:-120px;bottom:-160px;width:480px;height:480px;border-radius:50%;background:radial-gradient(circle,rgba(31,122,140,.35),transparent 70%)}
   .hero-grid{display:grid;grid-template-columns:1.2fr .9fr;gap:48px;align-items:center;position:relative;z-index:2}
   .hero h1{color:#fff;font-size:clamp(2rem,4.6vw,3.2rem);margin-bottom:18px}
@@ -85,6 +89,7 @@
   .trustbar{background:var(--sand);padding:22px 0;border-bottom:1px solid #ece5d8}
   .trust-items{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}
   .trust-items div{display:flex;align-items:center;gap:10px;font-weight:600;font-size:.92rem;color:var(--navy)}
+  .trust-items .check{color:var(--teal);flex:none}
   .trust-items svg{flex:none}
 
   /* Sections */
@@ -188,11 +193,16 @@
 </nav>
 
 <header class="hero" id="top">
+  <!-- Background video: drop hero-bg.mp4 (muted loop, ~10s, <5MB, 1280x720) next to this file. Falls back to the gradient if missing. -->
+  <video class="hero-video" autoplay muted loop playsinline preload="metadata" aria-hidden="true" onerror="this.remove()">
+    <source src="hero-bg.mp4" type="video/mp4">
+  </video>
+  <div class="hero-video-overlay"></div>
   <div class="wrap hero-grid">
     <div>
       <span class="eyebrow" style="color:var(--sky)">Paradise Valley · 85253</span>
       <h1>Windows so clean, you'll forget <em>they're there.</em></h1>
-      <p class="lead">Detail-obsessed window cleaning, hard water stain removal, and exterior care for Paradise Valley homes. Owner-operated. Licensed &amp; insured. Treated like it's our own house — because our name is on every pane.</p>
+      <p class="lead">Detail-obsessed window cleaning, hard water stain removal, and exterior care for Paradise Valley homes. Owner-operated. Treated like it's our own house — because our name is on every pane.</p>
       <div class="hero-ctas">
         <a class="btn btn-primary" href="#quote">Get a Free Quote</a>
         <a class="btn btn-ghost" href="tel:+16025550147">Call or Text (602) 555-0147</a>
@@ -223,11 +233,10 @@
 
 <div class="trustbar">
   <div class="wrap trust-items">
-    <div>✔ Licensed &amp; Insured</div>
-    <div>✔ Owner-Operated</div>
-    <div>✔ Background-Checked</div>
-    <div>✔ 100% Streak-Free Guarantee</div>
-    <div>✔ Luxury-Home Careful</div>
+    <div><svg class="check" viewBox="0 0 16 16" width="16" height="16"><path d="M2 8.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg> Owner-Operated</div>
+    <div><svg class="check" viewBox="0 0 16 16" width="16" height="16"><path d="M2 8.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg> 100% Streak-Free Guarantee</div>
+    <div><svg class="check" viewBox="0 0 16 16" width="16" height="16"><path d="M2 8.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg> Luxury-Home Careful</div>
+    <div><svg class="check" viewBox="0 0 16 16" width="16" height="16"><path d="M2 8.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg> Photo-Proof of Every Job</div>
   </div>
 </div>
 
@@ -240,25 +249,25 @@
     </div>
     <div class="services-grid">
       <div class="svc">
-        <div class="icon">🪟</div>
+        <div class="icon"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#0e2a3a" stroke-width="1.8" stroke-linecap="round"><rect x="4" y="3" width="16" height="18" rx="1.5"/><line x1="12" y1="3" x2="12" y2="21"/><line x1="4" y1="12" x2="20" y2="12"/></svg></div>
         <h3>Window Cleaning</h3>
         <p>Interior &amp; exterior, screens washed, tracks and sills detailed. Pure-water poles for high glass, hand-squeegee where it counts.</p>
         <span class="tag">Most Popular</span>
       </div>
       <div class="svc">
-        <div class="icon">💧</div>
+        <div class="icon"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#0e2a3a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c3.5 4.5 6 7.8 6 11a6 6 0 1 1-12 0c0-3.2 2.5-6.5 6-11z"/><path d="M9.5 14a2.5 2.5 0 0 0 2.5 2.5"/></svg></div>
         <h3>Hard Water Stain Removal</h3>
         <p>Those white mineral spots from sprinklers and misters? We restore the glass instead of you replacing it — a fraction of the cost of new windows.</p>
         <span class="tag">AZ Specialty</span>
       </div>
       <div class="svc">
-        <div class="icon">🏠</div>
+        <div class="icon"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#0e2a3a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><line x1="9" y1="20" x2="9" y2="14"/><line x1="15" y1="20" x2="15" y2="14"/></svg></div>
         <h3>Pressure Washing</h3>
         <p>Driveways, patios, pavers, and pool decks. Monsoon grime and tire marks gone — without damaging travertine or pavers.</p>
         <span class="tag">Curb Appeal</span>
       </div>
       <div class="svc">
-        <div class="icon">☀️</div>
+        <div class="icon"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#0e2a3a" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="4.5"/><line x1="12" y1="2" x2="12" y2="5"/><line x1="12" y1="19" x2="12" y2="22"/><line x1="2" y1="12" x2="5" y2="12"/><line x1="19" y1="12" x2="22" y2="12"/><line x1="4.9" y1="4.9" x2="7" y2="7"/><line x1="17" y1="17" x2="19.1" y2="19.1"/><line x1="4.9" y1="19.1" x2="7" y2="17"/><line x1="17" y1="7" x2="19.1" y2="4.9"/></svg></div>
         <h3>Solar Panel Cleaning</h3>
         <p>Dusty panels can quietly cost you real output. Deionized-water cleaning, no harsh chemicals, no scratched panels.</p>
         <span class="tag">Pays For Itself</span>
@@ -354,8 +363,8 @@
         <p>Only for interior work. For exterior-only jobs, many clients simply leave the side gate unlocked — we text before arrival, send before/after photos, and lock up when we're done.</p>
       </details>
       <details>
-        <summary>Are you insured?</summary>
-        <p>Fully licensed and insured, and happy to provide proof of insurance before work begins — something we'd encourage you to ask of anyone working on your home.</p>
+        <summary>What if I'm not happy with the result?</summary>
+        <p>Tell us within 48 hours and we come back and make it right at no charge — no fine print, no debate. Our entire business in Paradise Valley is built on referrals, so an unhappy customer costs us far more than a return visit.</p>
       </details>
     </div>
   </div>
@@ -391,7 +400,7 @@
         </form>
       </div>
       <div class="form-success" id="quoteSuccess">
-        <h3>Got it — talk soon! 🎉</h3>
+        <h3>Got it — talk soon!</h3>
         <p>We'll text you a quote shortly. Need it faster? Call or text <a href="tel:+16025550147"><strong>(602) 555-0147</strong></a>.</p>
       </div>
     </div>
@@ -403,7 +412,7 @@
     <div class="footer-grid">
       <div>
         <h4>Clear<span style="color:var(--copper)">PHX</span></h4>
-        <p>Detail-obsessed window cleaning and exterior care for Paradise Valley, Arizona. Owner-operated, licensed &amp; insured.</p>
+        <p>Detail-obsessed window cleaning and exterior care for Paradise Valley, Arizona. Owner-operated and detail-obsessed on every pane.</p>
       </div>
       <div>
         <h4>Services</h4>
@@ -424,11 +433,11 @@
         </ul>
       </div>
     </div>
-    <div class="footer-bottom">© 2026 ClearPHX. All rights reserved. Licensed &amp; insured in the State of Arizona.</div>
+    <div class="footer-bottom">© 2026 ClearPHX. All rights reserved.</div>
   </div>
 </footer>
 
-<div class="mobile-call"><a href="tel:+16025550147">📞 Call ClearPHX — Free Quote</a></div>
+<div class="mobile-call"><a href="tel:+16025550147">Call ClearPHX — Free Quote</a></div>
 
 <script>
 function handleQuote(form){
@@ -439,7 +448,7 @@ function handleQuote(form){
     document.getElementById('quoteForm').style.display='none';
     document.getElementById('quoteSuccess').style.display='block';
   } else {
-    form.innerHTML = '<p style="text-align:center;font-weight:700;color:var(--teal);padding:20px 0">Got it — we\'ll text you a quote shortly! 🎉</p>';
+    form.innerHTML = '<p style="text-align:center;font-weight:700;color:var(--teal);padding:20px 0">Got it — we\'ll text you a quote shortly!</p>';
   }
   return false;
 }
